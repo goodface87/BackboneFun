@@ -42,7 +42,9 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jquery")      
+        @Scripts.Render("~/Scripts/underscore.js")
+        @Scripts.Render("~/Scripts/backbone.js")
         @RenderSection("scripts", required: false)
     </body>
 </html>
