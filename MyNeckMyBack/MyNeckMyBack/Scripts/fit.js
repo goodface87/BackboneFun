@@ -45,10 +45,10 @@ function bind_card_interactions() {
         //        $('.card .card-back').hide()
         $('.card').hover(function () {
             $(this).children('.card-back').fadeIn(300);
-            $(this).children('.card-front').hide()//.fadeOut(300);
+            $(this).children('.card-front').hide(); 
         }, function () {
             $(this).children('.card-front').fadeIn(300);
-            $(this).children('.card-back').hide()//.fadeOut(300);
+            $(this).children('.card-back').hide(); 
         });
     }
 
@@ -57,5 +57,4 @@ function bind_card_interactions() {
 
 $(function() {
     bind_card_interactions();
-    //alert('ready');
 });
