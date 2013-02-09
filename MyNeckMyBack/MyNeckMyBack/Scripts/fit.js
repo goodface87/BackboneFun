@@ -1,17 +1,4 @@
-﻿var in_edit_mode=false;
-var achievement_modal_raw;
-var should_show;
-var notifications_received=false;
-var quest_loaded=false;
-var title_loaded=false;
-var quest_stream;
-var has_invited=false;
-var username_user_ids=new Object();
-var user_info_cache=new Object();
-var stoploading=true;
-var group_list;
-
-
+﻿
 function canDoTransforms() {
     return Modernizr.csstransforms3d;
 }
