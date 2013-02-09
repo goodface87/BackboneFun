@@ -59,7 +59,8 @@ $(function() {
     bind_card_interactions();
     FlashCard = Backbone.Model.extend({
         //Create a model to hold friend atribute
-        name: null
+        question: null,
+        answer: null
     });
 
     FlashCardCollection = Backbone.Collection.extend({
