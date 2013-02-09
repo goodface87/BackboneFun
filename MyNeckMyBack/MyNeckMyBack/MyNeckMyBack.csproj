@@ -226,8 +226,17 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\themes\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\themes\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\themes\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\themes\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\themes\bootstrap\js\bootstrap.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Content\themes\bootstrap\img\Thumbs.db" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\paquita.jpg" />
     <Content Include="Images\avatar.jpg" />

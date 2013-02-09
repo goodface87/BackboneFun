@@ -6,6 +6,8 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/bootstrap/css/bootstrap.css")
+        @Styles.Render("~/Content/themes/bootstrap/css/bootstrap-responsive.css")
         @Styles.Render("~/Content/fit.css")
         @Scripts.Render("~/bundles/modernizr")
     </head>
@@ -44,6 +46,7 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")      
+        @Scripts.Render("~/Content/themes/bootstrap/js/bootstrap.min.js")
         @Scripts.Render("~/Scripts/underscore.js")
         @Scripts.Render("~/Scripts/backbone.js")
         @Scripts.Render("~/Scripts/fit.js")
