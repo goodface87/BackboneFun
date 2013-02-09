@@ -57,62 +57,54 @@ function bind_card_interactions() {
 
 $(function() {
     bind_card_interactions();
+
+});//End of document ready
+
+(function ($) {
+
+
     FlashCard = Backbone.Model.extend({
-        //Create a model to hold friend atribute
+        //Create a model to hold flash card atribute
         question: null,
         answer: null
     });
 
     FlashCardCollection = Backbone.Collection.extend({
         model: FlashCard,       //Indicates what it's a collection of
-        //This is our Friends collection and holds our Friend models
+        //This is our flash card collection and holds our flash card models
         initialize: function (models, options) {
-            //this.bind("add", options.view.addFriendLi);
+            this.bind("add", options.view.addFlashCardLi);
             //Listen for new additions to the collection and call a view function if so
+            //Now, if anything is ever added to this collection, that will automatically call addFlashCardLi 
+            //function in the view that was passed.
         }
     });
 
     window.FlashCardView = Backbone.View.extend({
         el: $("body"),              //The element representing the view.
-        initialize: function() {    //Like a constructor
-            this.friends = new FlashCardCollection(null, { view: this });
+        initialize: function () {    //Like a constructor
+            this.flashCards = new FlashCardCollection(null, { view: this });
             //Create a flash card collection when the view is initialized.
             //Pass it a reference to this view to create a connection between the two
         },
         events: {
-            "click #add-card":"showPrompt"
+            "click #add-card": "showPrompt",
         },
-        showPrompt: function() {
-            alert('you clicked');
+        showPrompt: function () {
+            var flashCard = new FlashCard({ question: 'How are you?', answer: 'fine' });
+            this.flashCards.add(flashCard);
+
+        },
+        addFlashCardLi: function (model) {
+            $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '</li>');
+            //The parameter passed is a reference to the model that was added
+            // Use .get to receive attributes of the model
         }
     });
     var flashCardView = new FlashCardView;
 
 
 
+})(jQuery);
 
-    window.AppView = Backbone.View.extend({
-        el: $("body"),
-        initialize: function () {
-            this.friends = new Friends(null, { view: this });
-            //Create a friends collection when the view is initialized.
-            //Pass it a reference to this view to create a connection between the two
-        },
-        events: {
-            "click #add-friend": "showPrompt",
-        },
-        showPrompt: function () {
-            var friend_name = prompt("Who is your friend?");
-            var friend_model = new Friend({ name: friend_name });
-            //Add a new friend model to our friend collection
-            this.friends.add(friend_model);
-        },
-        addFriendLi: function (model) {
-            //The parameter passed is a reference to the model that was added
-            $("#friends-list").append("<li>" + model.get('name') + "</li>");
-            //Use .get to receive attributes of the model
-        }
 
-    });
-
-});//End of document ready
