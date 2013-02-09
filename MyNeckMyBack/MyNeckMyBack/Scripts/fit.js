@@ -57,4 +57,17 @@ function bind_card_interactions() {
 
 $(function() {
     bind_card_interactions();
+    FlashCard = Backbone.Model.extend({
+        //Create a model to hold friend atribute
+        name: null
+    });
+
+    FlashCards = Backbone.Collection.extend({
+        //This is our Friends collection and holds our Friend models
+        initialize: function (models, options) {
+            //this.bind("add", options.view.addFriendLi);
+            //Listen for new additions to the collection and call a view function if so
+        }
+    });
+
 });
