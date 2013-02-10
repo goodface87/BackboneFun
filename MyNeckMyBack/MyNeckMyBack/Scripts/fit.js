@@ -88,14 +88,18 @@ $(function() {
             //Pass it a reference to this view to create a connection between the two
         },
         events: {
-            "click #add-card": "submitCard",
+            "click #add-card": "attemptToSubmitCard",
             "keypress #answer" : "answerEnterKey",
         },
         answerEnterKey: function (e) {
             if (e.which == 13) {
-                this.submitCard();
+                this.attemptToSubmitCard();
                 $('#question').focus();
             }
+        },
+        attemptToSubmitCard: function() {
+            if (this.inputsAreValid())
+                this.submitCard();
         },
         submitCard: function () {
             var $questionInput = $('#question');
@@ -104,6 +108,17 @@ $(function() {
             this.flashCards.add(flashCard);
             $questionInput.val('');
             $answerInput.val('');
+        },
+        inputsAreValid: function () {
+            var $emptyInputs = $('input:text[value=""]');
+            if ($emptyInputs.length > 0) {
+                $emptyInputs.closest('.control-group').addClass('error');
+                return false;
+            } else {
+                $('.control-group').removeClass('error');
+                return true;
+            }
+            //does nothing.
         },
         addFlashCardLi: function (model) {
             $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '</li>');
