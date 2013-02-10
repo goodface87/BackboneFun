@@ -89,6 +89,10 @@ $(function() {
         },
         events: {
             "click #add-card": "showPrompt",
+            "keypress #answer" : "inputKeyPress",
+        },
+        inputKeyPress: function(e) {
+            if (e.which == 13) this.showPrompt();
         },
         showPrompt: function () {
             var $questionInput = $('#question');
