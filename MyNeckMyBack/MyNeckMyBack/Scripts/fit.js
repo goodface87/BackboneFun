@@ -141,6 +141,7 @@ $(function() {
         //This is our flash card collection and holds our flash card models
         initialize: function (models, options) {
             this.bind("add", options.view.addFlashCardLi);
+            this.bind("add", options.view.addFlashCardDiv);
             //Listen for new additions to the collection and call a view function if so
             //Now, if anything is ever added to this collection, that will automatically call addFlashCardLi 
             //function in the view that was passed.
@@ -151,6 +152,7 @@ $(function() {
         el: $("body"),              //The element representing the view.
         initialize: function () {    //Like a constructor
             this.flashCards = new FlashCardCollection(null, { view: this });
+            this.flashCardClone = $('.card-container');
             //Create a flash card collection when the view is initialized.
             //Pass it a reference to this view to create a connection between the two
         },
@@ -191,6 +193,13 @@ $(function() {
             $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '</li>');
             //The parameter passed is a reference to the model that was added
             // Use .get to receive attributes of the model
+        },
+        addFlashCardDiv: function(model) {
+            var $newFlashCard = $('.card-container:first').clone();
+            $newFlashCard.find('.front-face').text(model.get('question'));
+            $newFlashCard.find('.back-face').text(model.get('question'));
+            var $newItem = $('<div></div>').addClass('item').append($newFlashCard);
+            $('.carousel-inner').append($newItem);
         }
     });
     var flashCardView = new FlashCardView;
