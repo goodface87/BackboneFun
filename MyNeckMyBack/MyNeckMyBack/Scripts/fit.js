@@ -161,12 +161,18 @@ $(function() {
         },
         events: {
             "click #add-card": "attemptToSubmitCard",
-            "keypress #answer" : "answerEnterKey",
+            "keypress #answer": "answerEnterKey",
+            "keypress #question": "questionEnterKey",
         },
         answerEnterKey: function (e) {
             if (e.which == 13) {
                 this.attemptToSubmitCard();
                 $('#question').focus();
+            }
+        },
+        questionEnterKey: function (e) {
+            if (e.which == 13) {
+                $('#answer').focus();
             }
         },
         attemptToSubmitCard: function() {
@@ -193,7 +199,7 @@ $(function() {
             //does nothing.
         },
         addFlashCardLi: function (model) {
-            $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '</li>');
+            $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '<button type="button" class="close" data-dismiss="alert">×</button></li>');
             //The parameter passed is a reference to the model that was added
             // Use .get to receive attributes of the model
         },
