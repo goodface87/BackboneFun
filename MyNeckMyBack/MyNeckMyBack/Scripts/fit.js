@@ -89,10 +89,13 @@ $(function() {
         },
         events: {
             "click #add-card": "submitCard",
-            "keypress #answer" : "inputKeyPress",
+            "keypress #answer" : "answerEnterKey",
         },
-        inputKeyPress: function(e) {
-            if (e.which == 13) this.submitCard();
+        answerEnterKey: function (e) {
+            if (e.which == 13) {
+                this.submitCard();
+                $('#question').focus();
+            }
         },
         submitCard: function () {
             var $questionInput = $('#question');
