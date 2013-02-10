@@ -200,7 +200,7 @@ $(function() {
         addFlashCardDiv: function(model) {
             var $newFlashCard = $('.card-container:first').clone().show();
             $newFlashCard.find('.front-face').text(model.get('question'));
-            $newFlashCard.find('.back-face').text(model.get('question'));
+            $newFlashCard.find('.back-face').text(model.get('answer'));
             var $newItem = $('<div></div>').addClass('item').append($newFlashCard);
             if (this.length <= 1) $newItem.addClass('active');
             $('.carousel-inner').append($newItem);
