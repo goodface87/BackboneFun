@@ -754,3 +754,17 @@ tr.pager td {
             margin: 0;
         }
 }
+
+/*My CSS*/
+
+.widget-subsection {
+    height: 334px;
+}
+
+.card-back .widget-subsection:last-child {
+    border-bottom: 0;
+}
+
+div.card {
+    width: 600px;
+}
