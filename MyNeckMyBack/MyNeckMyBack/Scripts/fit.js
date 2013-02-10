@@ -198,7 +198,7 @@ $(function() {
             // Use .get to receive attributes of the model
         },
         addFlashCardDiv: function(model) {
-            var $newFlashCard = $('.card-container:first').clone();
+            var $newFlashCard = $('.card-container:first').clone().show();
             $newFlashCard.find('.front-face').text(model.get('question'));
             $newFlashCard.find('.back-face').text(model.get('question'));
             var $newItem = $('<div></div>').addClass('item').append($newFlashCard);
