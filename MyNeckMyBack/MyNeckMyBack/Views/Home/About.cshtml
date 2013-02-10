@@ -2,38 +2,58 @@
     ViewBag.Title = "About";
 }
 
-<div id="track-empty-state">
-    <div class="major-header gray">This is a thing, ya'll</div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/themes/bootstrap/css/bootstrap.css")
+        @Styles.Render("~/Content/themes/bootstrap/css/bootstrap-responsive.css")
+        @Styles.Render("~/Content/fit.css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+        </header>
+        
 
-    <div class="dramatic-body dark-gray">These are some flippy things</div>
+
+
+        <div id="track-empty-state" class="container">
+            <div class="major-header gray">This is a thing, ya'll</div>
+
+            <div class="dramatic-body dark-gray">These are some flippy things</div>
     
     
-    <div class="form-inline">
-        <span class="control-group">
-            <input type="text" id="question"  class="input-xlarge" placeholder="Question">
-        </span>
-        <span class="control-group">
-            <input type="text" id="answer" class="input-xlarge" placeholder="Answer">
-            <button id="add-card" class="btn">Add Card</button>
-        </span>
-    </div>
-    
-    <div class="accordion" id="accordion2">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    List of Flash Cards
-                </a>
+            <div class="form-inline row">
+                <span class="control-group span6">
+                    <input type="text" id="question"  class="span6" placeholder="Question">
+                </span>
+                <span class="control-group span5">
+                    <input type="text" id="answer" class="span5" placeholder="Answer">
+                </span>
+                    <button id="add-card" class="btn btn-small"><i class="icon-plus"></i></button>
             </div>
-            <div id="collapseOne" class="accordion-body collapse in">
-                <ul id="flash-cards-list" class="accordion-inner">
-                </ul>
+    
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            List of Flash Cards
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in">
+                        <ul id="flash-cards-list" class="accordion-inner">
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
 
 
-    @*    <div class="card-container" style="margin-right: 0px;">
+            @*    <div class="card-container" style="margin-right: 0px;">
       <div class="card track-card everyday_activities flippy">
         <div class="card-front widget">
           <div class="widget-subsection card-splash-image">
@@ -80,41 +100,49 @@
     
     
     
-    <div class="card-container" style="display:none;">
-      <div class="card track-card everyday_activities flippy">
-          <div class="card-front widget">
-            <div class="widget-subsection ">
-                <span class="front-face">front face</span>
-                <div class="flip-message pull-right muted" >Click card to flip over</div>
+            <div class="card-container" style="display:none;">
+                <div class="card track-card everyday_activities flippy">
+                    <div class="card-front widget">
+                        <div class="widget-subsection">
+                            <span class="front-face dramatic-body">front face</span>
+                            <div class="flip-message pull-right muted" >Click card to flip over</div>
+                        </div>
+                    </div>
+
+                    <div class="card-back card-rotate widget">
+                        <div class="widget-subsection ">
+                            <span class="back-face dramatic-body">back face</span>
+                            <div class="flip-message pull-right muted" >Click card to flip over</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+    
+    
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                </div>
+                <!-- Carousel nav -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+            </div>
 
-        <div class="card-back card-rotate widget">
-          <div class="widget-subsection ">
-            <span class="back-face">back face</span>
-            <div class="flip-message pull-right muted" >Click card to flip over</div>
-          </div>
+
+
         </div>
-      </div>
-    </div>
-    
-    
-    <div id="myCarousel" class="carousel slide">
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
 
 
-
-</div>
-
-
+        
+        @Scripts.Render("~/bundles/jquery")      
+        @Scripts.Render("~/Content/themes/bootstrap/js/bootstrap.min.js")
+        @Scripts.Render("~/Scripts/underscore.js")
+        @Scripts.Render("~/Scripts/backbone.js")
+        @Scripts.Render("~/Scripts/fit.js")
+    </body>
+</html>
