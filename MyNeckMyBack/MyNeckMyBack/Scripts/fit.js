@@ -88,13 +88,13 @@ $(function() {
             //Pass it a reference to this view to create a connection between the two
         },
         events: {
-            "click #add-card": "showPrompt",
+            "click #add-card": "submitCard",
             "keypress #answer" : "inputKeyPress",
         },
         inputKeyPress: function(e) {
-            if (e.which == 13) this.showPrompt();
+            if (e.which == 13) this.submitCard();
         },
-        showPrompt: function () {
+        submitCard: function () {
             var $questionInput = $('#question');
             var $answerInput = $('#answer');
             var flashCard = new FlashCard({ question: $questionInput.val(), answer: $answerInput.val() });
