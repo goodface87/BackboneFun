@@ -91,9 +91,12 @@ $(function() {
             "click #add-card": "showPrompt",
         },
         showPrompt: function () {
-            var flashCard = new FlashCard({ question: 'How are you?', answer: 'fine' });
+            var $questionInput = $('#question');
+            var $answerInput = $('#answer');
+            var flashCard = new FlashCard({ question: $questionInput.val(), answer: $answerInput.val() });
             this.flashCards.add(flashCard);
-
+            $questionInput.val('');
+            $answerInput.val('');
         },
         addFlashCardLi: function (model) {
             $('#flash-cards-list').append("<li>" + model.get('question') + ' : ' + model.get('answer') + '</li>');
