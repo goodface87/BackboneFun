@@ -13,6 +13,8 @@ jQuery.fn.flipToBack = function() {
     $(this).data('mouseover', true);
     if ($('#recommended-groups-container .cards-wrapper').length !== 0)
         $('#recommended-groups-container .cards-wrapper').cycle('pause');
+
+    $(this).data('sentinel', null);
 };
 
 jQuery.fn.flipToFront = function() {
@@ -36,13 +38,14 @@ function bind_card_interactions() {
 
     if (canDoTransforms()) {
         $(".card").addClass("flippy");
-        $('.card').click(function () {
-            if (cardIsFacingFront) {
-                $(this).flipToBack();
-                cardIsFacingFront = false;
-            } else {
+        $('.card').live('click', function () {
+            if ($(this).data('IsFacingBack')) {
                 $(this).flipToFront();
-                cardIsFacingFront = true;
+                $(this).data('IsFacingBack', false);
+
+            } else {
+                $(this).flipToBack();
+                $(this).data('IsFacingBack', true);
             }
         });
 
@@ -199,6 +202,7 @@ $(function() {
             $newFlashCard.find('.front-face').text(model.get('question'));
             $newFlashCard.find('.back-face').text(model.get('question'));
             var $newItem = $('<div></div>').addClass('item').append($newFlashCard);
+            if (this.length <= 1) $newItem.addClass('active');
             $('.carousel-inner').append($newItem);
         }
     });
