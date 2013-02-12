@@ -769,3 +769,35 @@ div.card {
     width: 600px;
 }
 
+
+@media (min-width: 1200px) {
+    #track-empty-state div.card-container {
+        /*display: inline-block;*/
+        margin: 10px 260px;
+    }
+
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    #track-empty-state div.card-container {
+        /*display: inline-block;*/
+        margin: 10px 170px;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 979px) {
+    #track-empty-state div.card-container {
+        /*display: inline-block;*/
+        margin: 10px 62px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    #track-empty-state div.card-container {
+        /*display: inline-block;*/
+        margin: 10px auto;
+    }
+}
+
