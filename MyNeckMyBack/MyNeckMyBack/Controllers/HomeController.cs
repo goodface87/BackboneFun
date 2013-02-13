@@ -28,5 +28,11 @@ namespace MyNeckMyBack.Controllers
 
             return View();
         }
+
+        public ActionResult CardKnockout()
+        {
+            return PartialView();
+        }
+
     }
 }
