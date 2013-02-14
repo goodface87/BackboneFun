@@ -45,7 +45,8 @@
                         </a>
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
-                        <ul id="flash-cards-list" class="accordion-inner">
+                        <ul data-bind="foreach: Cards" id="flash-cards-list" class="accordion-inner">
+                            <li><span data-bind="text: question" ></span> : <span data-bind="text:answer"></span> </li>
                         </ul>
                     </div>
                 </div>
