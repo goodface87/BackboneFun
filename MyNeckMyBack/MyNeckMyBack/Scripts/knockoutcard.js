@@ -17,6 +17,10 @@ var ViewModel = function(todos) {
         new Card("12x12", "144")
     ]);
 
+    self.remove = function(card) {
+        self.Cards.remove(card);
+    };
+
 };
 
 ko.applyBindings(new ViewModel());

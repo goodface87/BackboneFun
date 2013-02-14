@@ -46,7 +46,13 @@
                     </div>
                     <div id="collapseOne" class="accordion-body collapse in">
                         <ul data-bind="foreach: Cards" id="flash-cards-list" class="accordion-inner">
-                            <li><span data-bind="text: question" ></span> : <span data-bind="text:answer"></span> </li>
+                            <li>
+                                <span data-bind="text: question" ></span> : 
+                                <span data-bind="text:answer"></span> 
+                                <button type="button" class="close" data-bind="click: $root.remove">×</button> 
+                                @* We write $root to make sure it goes to the remove function that's in the root view 
+                                model and not the Card in the Cards list we're currently foreaching  *@
+                            </li>
                         </ul>
                     </div>
                 </div>
