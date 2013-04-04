@@ -55,3 +55,12 @@
    background: gray;
 }*/
 
+
+.masthead {
+    margin: 10px 0px;
+}
+
+.navbar-inner .container-narrow {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
