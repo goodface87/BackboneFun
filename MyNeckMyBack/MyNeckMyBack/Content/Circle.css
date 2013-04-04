@@ -60,6 +60,15 @@
     margin: 20px 0px;
 }
 
+.masthead a, .masthead a:hover, .masthead a:focus, .masthead a:visited, .masthead a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.masthead h1,h2,h3,h4,h5,h6 {
+    font-weight: normal;
+}
+
 .navbar-inner .container-narrow {
 	display: table;   /* Allow the centering to work */
 	margin: 0 auto;
