@@ -14,10 +14,8 @@
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     text-decoration: none;
     background-color: rgb(229, 229, 229);
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.125) inset;
-}
+    box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.125) inset;
 
-.navbar-inner {
     min-height: 40px;
     padding-right: 20px;
     padding-left: 20px;
@@ -25,7 +23,7 @@
     background-image: none;
     background-repeat: repeat-x;
     border: 0px;
-    border-radius: 4px 4px 4px 4px;
+    border-radius: 0px 0px 0px 0px;
     /*box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.067);*/
 }
 
@@ -38,6 +36,19 @@
     background-color: rgb(255, 255, 255);
     box-shadow: none;
 }
+
+
+@media (max-width: 979px) {
+}
+
+
+@media (min-width: 980px) {
+  /*.nav-collapse.collapse {
+    height: auto !important;
+    overflow: visible !important;
+  }*/
+}
+
 
 
 
